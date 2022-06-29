@@ -5,7 +5,7 @@ require("dotenv").config()
 
 router.post("/", async (req, res ,next) =>{
       try {
-        
+        const { first_name, last_name,email, password} = req.body
       } catch (error) {
         
       }
