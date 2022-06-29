@@ -10,4 +10,7 @@ app.get("/signUp", (req, res, next) => {
         }
     })
 })
+app.listen(port, () =>{
+    console.log('server is listning on port', port);
+})
 
