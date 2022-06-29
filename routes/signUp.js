@@ -2,7 +2,6 @@ const regUser = require("../models/User")
 const express = require("express");
 const router = express.Router()
 require("dotenv").config()
-require("../db/config")
 router.use(express.json())
 
 router.post("/", async (req, res ,next) =>{
@@ -17,7 +16,7 @@ router.post("/", async (req, res ,next) =>{
         email: email.toLowerCase(), // sanitize: convert email to lowercase
         password: password,
       });
-
+        res.status(201).json(user)
       } catch (err) {
         return err.message
       }
