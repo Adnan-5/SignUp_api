@@ -4,11 +4,7 @@ const router = express.Router()
 require("dotenv").config()
 
 router.post("/", async (req, res ,next) =>{
-    res.json({
-        body:{
-            message:"Its POST route"
-        }
-    })
+
 })
 
 
