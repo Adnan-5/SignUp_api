@@ -9,8 +9,8 @@ router.post("/", async (req, res ,next) =>{
       if(!(email && password && first_name && last_name)){
         res.status(400).send("All Fields ")
       }
-      } catch (error) {
-        
+      } catch (err) {
+        return err.message
       }
 })
 
