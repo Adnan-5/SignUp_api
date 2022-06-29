@@ -2,7 +2,7 @@ const regUser = require("../models/User")
 const express = require("express");
 const router = express.Router()
 require("dotenv").config()
-
+require("../db/config")
 router.use(express.json())
 
 router.post("/", async (req, res ,next) =>{
