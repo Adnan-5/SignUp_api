@@ -4,5 +4,9 @@ const router = express.Router()
 
 
 router.post("/", (req, res ,next) =>{
-    
+    res.json({
+        body:{
+            message:"Its PORT route"
+        }
+    })
 })
