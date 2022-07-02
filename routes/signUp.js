@@ -31,6 +31,8 @@ router.post("/", async (req, res ,next) =>{
           expiresIn: "2h",
         }
       );
+      
+       user.token = token;
         res.status(201).json(user)
       } catch (err) {
         return err.message
