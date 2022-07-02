@@ -4,6 +4,7 @@ const router = express.Router()
 require("dotenv").config()
 require("../db/config").connect()
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 router.use(express.json())
 
 router.post("/", async (req, res ,next) =>{
