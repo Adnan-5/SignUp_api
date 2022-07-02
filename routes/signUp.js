@@ -20,6 +20,17 @@ router.post("/", async (req, res ,next) =>{
         email: email.toLowerCase(), // sanitize: convert email to lowercase
         password: encryptedPassword,
       });
+
+      const token = jwt.sign(
+        { 
+          user_id: user._id,
+           email
+           },
+        process.env.TOKEN_KEY,
+        {
+          expiresIn: "2h",
+        }
+      );
         res.status(201).json(user)
       } catch (err) {
         return err.message
