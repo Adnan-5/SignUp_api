@@ -13,11 +13,12 @@ router.post("/", async (req, res ,next) =>{
       if(!(email && password && first_name && last_name)){
         res.status(400).send("All Fields  Are Required")
       }
+      encryptedPassword = await bcrypt.hash(password, 10)
       const user = await regUser.create({
         first_name,
         last_name,
         email: email.toLowerCase(), // sanitize: convert email to lowercase
-        password: password,
+        password: encryptedPassword,
       });
         res.status(201).json(user)
       } catch (err) {
